@@ -15,23 +15,14 @@ export  class Tablero extends React.Component {
         this.verifyPareja = this.verifyPareja.bind(this);
 
     }
+/////////////////  M E Z C L A R  C A R T A S   /////////////////////
+     shuffle(array) {
+        array.sort(() => Math.random() - 0.5);
+        let arr = this.state.cards;
 
-    shuffle(array) {
-        let currentIndex = array.length, temporaryValue, randomIndex;
-
-        while (0 !== currentIndex) {
-            
-            // Seleccionar un elemento sin mezclar...
-            randomIndex = Math.floor(Math.random() * currentIndex);
-            currentIndex -= 1;
-
-            // E intercambiarlo con el elemento actual
-            temporaryValue = array[currentIndex];
-            array[currentIndex] = array[randomIndex];
-            array[randomIndex] = temporaryValue;
-        }
-        return array;
-    }
+        return arr;
+      }
+    /////////////////  M E Z C L A R  C A R T A S   /////////////////////
 
     generadorTablero() {
         let i, j = 0;
